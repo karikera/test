@@ -26,22 +26,22 @@ jobs:
               },
               {
                 "type": "body",
-                "regex": ".*1\. Go to '\.\.\.'.*",
+                "regex": ".*1\\. Go to '\\.\\.\\.'.*",
                 "message": "@${issue.user.login} this issue was automatically closed because it did not follow the issue template"
               },
               {
                 "type": "body",
-                "regex": ".*2\. Click on '\.\.\.\.'.*",
+                "regex": ".*2\\. Click on '\\.\\.\\.\\.'.*",
                 "message": "@${issue.user.login} this issue was automatically closed because it did not follow the issue template"
               },
               {
                 "type": "body",
-                "regex": ".*3\. Scroll down to '\.\.\.\.'.*",
+                "regex": ".*3\\. Scroll down to '\\.\\.\\.\\.'.*",
                 "message": "@${issue.user.login} this issue was automatically closed because it did not follow the issue template"
               },
               {
                 "type": "body",
-                "regex": ".*4\. See error.*",
+                "regex": ".*4\\. See error.*",
                 "message": "@${issue.user.login} this issue was automatically closed because it did not follow the issue template"
               },
               {
@@ -56,17 +56,17 @@ jobs:
               },
               {
                 "type": "body",
-                "regex": ".* - OS: \[e\.g\. iOS\].*",
+                "regex": ".* - OS: \\[e\\.g\\. iOS\\].*",
                 "message": "@${issue.user.login} this issue was automatically closed because it did not follow the issue template"
               },
               {
                 "type": "body",
-                "regex": ".* - Browser \[e\.g\. chrome, safari\].*",
+                "regex": ".* - Browser \\[e\\.g\\. chrome, safari\\].*",
                 "message": "@${issue.user.login} this issue was automatically closed because it did not follow the issue template"
               },
               {
                 "type": "body",
-                "regex": ".* - Version \[e\.g\. 22\].*",
+                "regex": ".* - Version \\[e\\.g\\. 22\\].*",
                 "message": "@${issue.user.login} this issue was automatically closed because it did not follow the issue template"
               },
               {
