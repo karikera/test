@@ -1,14 +1,77 @@
+name: Moderator
 on:
   issues:
-    types: [opened, edited]
-
+    types:
+      # If you want the duplicate URL checker and/or the auto-closer
+      - opened
+      # If you want the auto-closer to run
+      - edited
+      - reopened
+  issue_comment:
+    types: [created]
 jobs:
-  auto_close_issues:
+  moderate:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v1
-      - name: Automatically close issues that don't follow the issue template
-        uses: lucasbento/auto-close-issues@v1.0.2
+      - name: Moderate issues
+        uses: tachiyomiorg/issue-moderator-action@v1
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          auto-close-rules: |
+            [
+              {
+                "type": "body",
+                "regex": ".*A clear and concise description of what the bug is.*",
+                "message": "@${issue.user.login} this issue was automatically closed because it did not follow the issue template"
+              },
+              {
+                "type": "body",
+                "regex": ".*1\. Go to '\.\.\.'.*",
+                "message": "@${issue.user.login} this issue was automatically closed because it did not follow the issue template"
+              },
+              {
+                "type": "body",
+                "regex": ".*2\. Click on '\.\.\.\.'.*",
+                "message": "@${issue.user.login} this issue was automatically closed because it did not follow the issue template"
+              },
+              {
+                "type": "body",
+                "regex": ".*3\. Scroll down to '\.\.\.\.'.*",
+                "message": "@${issue.user.login} this issue was automatically closed because it did not follow the issue template"
+              },
+              {
+                "type": "body",
+                "regex": ".*4\. See error.*",
+                "message": "@${issue.user.login} this issue was automatically closed because it did not follow the issue template"
+              },
+              {
+                "type": "body",
+                "regex": ".*A clear and concise description of what you expected to happen.*",
+                "message": "@${issue.user.login} this issue was automatically closed because it did not follow the issue template"
+              },
+              {
+                "type": "body",
+                "regex": ".*If applicable, add screenshots to help explain your problem.*",
+                "message": "@${issue.user.login} this issue was automatically closed because it did not follow the issue template"
+              },
+              {
+                "type": "body",
+                "regex": ".* - OS: \[e\.g\. iOS\].*",
+                "message": "@${issue.user.login} this issue was automatically closed because it did not follow the issue template"
+              },
+              {
+                "type": "body",
+                "regex": ".* - Browser \[e\.g\. chrome, safari\].*",
+                "message": "@${issue.user.login} this issue was automatically closed because it did not follow the issue template"
+              },
+              {
+                "type": "body",
+                "regex": ".* - Version \[e\.g\. 22\].*",
+                "message": "@${issue.user.login} this issue was automatically closed because it did not follow the issue template"
+              },
+              {
+                "type": "body",
+                "regex": ".*Add any other context about the problem here.*",
+                "message": "@${issue.user.login} this issue was automatically closed because it did not follow the issue template"
+              },
+            ]
