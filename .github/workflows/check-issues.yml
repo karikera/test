@@ -21,57 +21,46 @@ jobs:
             [
               {
                 "type": "body",
-                "regex": ".*A clear and concise description of what the bug is.*",
-                "message": "@${issue.user.login} this issue was automatically closed because it did not follow the issue template"
+                "regex": ".*A clear and concise description of what the bug is.*"
               },
               {
                 "type": "body",
-                "regex": ".*1\\. Go to '\\.\\.\\.'.*",
-                "message": "@${issue.user.login} this issue was automatically closed because it did not follow the issue template"
+                "regex": ".*1\\. Go to '\\.\\.\\.'.*"
               },
               {
                 "type": "body",
-                "regex": ".*2\\. Click on '\\.\\.\\.\\.'.*",
-                "message": "@${issue.user.login} this issue was automatically closed because it did not follow the issue template"
+                "regex": ".*2\\. Click on '\\.\\.\\.\\.'.*"
               },
               {
                 "type": "body",
-                "regex": ".*3\\. Scroll down to '\\.\\.\\.\\.'.*",
-                "message": "@${issue.user.login} this issue was automatically closed because it did not follow the issue template"
+                "regex": ".*3\\. Scroll down to '\\.\\.\\.\\.'.*"
               },
               {
                 "type": "body",
-                "regex": ".*4\\. See error.*",
-                "message": "@${issue.user.login} this issue was automatically closed because it did not follow the issue template"
+                "regex": ".*4\\. See error.*"
               },
               {
                 "type": "body",
-                "regex": ".*A clear and concise description of what you expected to happen.*",
-                "message": "@${issue.user.login} this issue was automatically closed because it did not follow the issue template"
+                "regex": ".*A clear and concise description of what you expected to happen.*"
               },
               {
                 "type": "body",
-                "regex": ".*If applicable, add screenshots to help explain your problem.*",
-                "message": "@${issue.user.login} this issue was automatically closed because it did not follow the issue template"
+                "regex": ".*If applicable, add screenshots to help explain your problem.*"
               },
               {
                 "type": "body",
-                "regex": ".* - OS: \\[e\\.g\\. iOS\\].*",
-                "message": "@${issue.user.login} this issue was automatically closed because it did not follow the issue template"
+                "regex": ".* - OS: \\[e\\.g\\. iOS\\].*"
               },
               {
                 "type": "body",
-                "regex": ".* - Browser \\[e\\.g\\. chrome, safari\\].*",
-                "message": "@${issue.user.login} this issue was automatically closed because it did not follow the issue template"
+                "regex": ".* - Browser \\[e\\.g\\. chrome, safari\\].*"
               },
               {
                 "type": "body",
-                "regex": ".* - Version \\[e\\.g\\. 22\\].*",
-                "message": "@${issue.user.login} this issue was automatically closed because it did not follow the issue template"
+                "regex": ".* - Version \\[e\\.g\\. 22\\].*"
               },
               {
                 "type": "body",
-                "regex": ".*Add any other context about the problem here.*",
-                "message": "@${issue.user.login} this issue was automatically closed because it did not follow the issue template"
+                "regex": ".*Add any other context about the problem here.*"
               }
             ]
