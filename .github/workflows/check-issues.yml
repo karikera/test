@@ -17,11 +17,11 @@ jobs:
         uses: tachiyomiorg/issue-moderator-action@v1
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-        auto-close-rules: |
-        [
-          {
-            "type": "title",
-            "regex": ".*Placeholder title.*",
-            "message": "@${issue.user.login} this issue was automatically closed because it did not follow the issue template"
-          }
-        ]
+          auto-close-rules: |
+            [
+              {
+                "type": "title",
+                "regex": ".*Placeholder title.*",
+                "message": "@${issue.user.login} this issue was automatically closed because it did not follow the issue template"
+              }
+            ]
