@@ -1,0 +1,27 @@
+name: Moderator
+on:
+  issues:
+    types:
+      # If you want the duplicate URL checker and/or the auto-closer
+      - opened
+      # If you want the auto-closer to run
+      - edited
+      - reopened
+  issue_comment:
+    types: [created]
+jobs:
+  moderate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Moderate issues
+        uses: tachiyomiorg/issue-moderator-action@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+        auto-close-rules: |
+        [
+          {
+            "type": "title",
+            "regex": ".*Placeholder title.*",
+            "message": "@${issue.user.login} this issue was automatically closed because it did not follow the issue template"
+          }
+        ]
