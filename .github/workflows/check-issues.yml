@@ -73,5 +73,5 @@ jobs:
                 "type": "body",
                 "regex": ".*Add any other context about the problem here.*",
                 "message": "@${issue.user.login} this issue was automatically closed because it did not follow the issue template"
-              },
+              }
             ]
