@@ -1,66 +1,13 @@
-name: Moderator
+name: Check Issues
 on:
   issues:
-    types:
-      # If you want the duplicate URL checker and/or the auto-closer
-      - opened
-      # If you want the auto-closer to run
-      - edited
-      - reopened
-  issue_comment:
-    types: [created]
+    types: [opened, edited]
+
 jobs:
-  moderate:
+  auto_close_issues:
     runs-on: ubuntu-latest
     steps:
-      - name: Moderate issues
-        uses: tachiyomiorg/issue-moderator-action@v1
+      - name: Automatically close issues that don't follow the issue template
+        uses: karikera/auto-close-issues
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          auto-close-rules: |
-            [
-              {
-                "type": "body",
-                "regex": ".*A clear and concise description of what the bug is.*"
-              },
-              {
-                "type": "body",
-                "regex": ".*1\\. Go to '\\.\\.\\.'.*"
-              },
-              {
-                "type": "body",
-                "regex": ".*2\\. Click on '\\.\\.\\.\\.'.*"
-              },
-              {
-                "type": "body",
-                "regex": ".*3\\. Scroll down to '\\.\\.\\.\\.'.*"
-              },
-              {
-                "type": "body",
-                "regex": ".*4\\. See error.*"
-              },
-              {
-                "type": "body",
-                "regex": ".*A clear and concise description of what you expected to happen.*"
-              },
-              {
-                "type": "body",
-                "regex": ".*If applicable, add screenshots to help explain your problem.*"
-              },
-              {
-                "type": "body",
-                "regex": ".* - OS: \\[e\\.g\\. iOS\\].*"
-              },
-              {
-                "type": "body",
-                "regex": ".* - Browser \\[e\\.g\\. chrome, safari\\].*"
-              },
-              {
-                "type": "body",
-                "regex": ".* - Version \\[e\\.g\\. 22\\].*"
-              },
-              {
-                "type": "body",
-                "regex": ".*Add any other context about the problem here.*"
-              }
-            ]
+          github-token: ${{ secrets.GITHUB_TOKEN }}
