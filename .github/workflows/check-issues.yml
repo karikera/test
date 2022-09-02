@@ -8,6 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Automatically close issues that don't follow the issue template
-        uses: karikera/auto-close-issues@v1.1
+        uses: karikera/issue-closer@v1.1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
