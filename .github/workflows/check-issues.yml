@@ -1,12 +1,14 @@
 name: Check Issues
 on:
   issues:
-    types: [opened, edited]
+    types: [opened, edited, reopen]
 
 jobs:
   auto_close_issues:
     runs-on: ubuntu-latest
     steps:
+      - name: checkout repo
+        uses: actions/checkout@v3
       - name: Automatically close issues that don't follow the issue template
         uses: karikera/issue-closer@HEAD
         with:
