@@ -4,12 +4,12 @@ on:
     types: [opened, edited, reopen]
 
 jobs:
-  auto_close_issues:
+  autoclose:
     runs-on: ubuntu-latest
     steps:
       - name: checkout repo
         uses: actions/checkout@v3
-      - name: Automatically close issues that don't follow the issue template
+      - name: check issue
         uses: karikera/issue-closer@HEAD
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
