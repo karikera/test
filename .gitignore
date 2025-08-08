@@ -1,0 +1,9 @@
+/target
+/brick-breaker/target/
+brick-breaker/target/
+target/
+**/target/
+Cargo.lock
+**/*_lock*
+*.lock
+/brick-breaker/Cargo.lock
