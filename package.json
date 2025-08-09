@@ -1,0 +1,11 @@
+{
+  "name": "number-baseball-game",
+  "version": "1.0.0",
+  "description": "A simple number baseball game in Node.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
